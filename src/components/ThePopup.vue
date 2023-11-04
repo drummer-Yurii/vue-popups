@@ -2,7 +2,7 @@
     <div class="popup">
         <div class="popup-inner">
             <slot />
-            <button class="popup-close">Close Popup</button>
+            <button class="popup-close" @click="TogglePopup()">Close Popup</button>
         </div>
     </div>
 </template>
@@ -10,6 +10,7 @@
 <script>
     export default {
         name: 'ThePopup',
+        props: ['TogglePopup']
     }
 </script>
 
