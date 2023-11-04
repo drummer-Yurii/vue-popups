@@ -5,7 +5,7 @@
     <ThePopup v-if="popupTriggers.buttonTrigger" :TogglePopup="() => TogglePopup('buttonTrigger')">
       <h2>My Button Popup</h2>
     </ThePopup>
-    <ThePopup v-if="popupTriggers.timedTrigger">
+    <ThePopup v-if="popupTriggers.timedTrigger" :TogglePopup="() => TogglePopup('timedTrigger')">
       <h2>My Timed Popup</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dicta rem, esse pariatur
@@ -33,6 +33,10 @@ export default {
     const TogglePopup = (trigger) => {
       popupTriggers.value[trigger] = !popupTriggers.value[trigger]
     }
+
+    setTimeout(() => {
+      popupTriggers.value.timedTrigger = true;
+    }, 3000);
 
     return {
       ThePopup,
